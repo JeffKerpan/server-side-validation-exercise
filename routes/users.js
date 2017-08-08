@@ -32,7 +32,7 @@ router.post('/' , (req, res, next) => {
       return next(err);
     }
 
-    if (!username || 6 >= username.length || !/^([a-zA-Z0-9])$/.test(username) || !/^[0-9]$/.test(username)) {
+    if (!username || 6 >= username.length || !/^([a-zA-Z0-9])$/.test(username) || !/^[a-zA-Z]$/.test(username[0])) {
       const err = new Error('Username must not be blank');
       err.status = 400;
 
